@@ -30,8 +30,12 @@ requirements and image evidence may also appear in annotation provenance.
 
 `aspects.jsonl` contains `question_id`, project and rule metadata, weighted
 scoring aspects, evidence bindings, and source-coverage diagnostics. It omits
-the duplicated `question` and `reference_answer` fields from the historical
-annotation artifact. The evaluator joins them in memory using `question_id`.
+the `question` and `reference_answer` fields from the historical annotation
+artifact. The evaluator joins them in memory using `question_id`. All reference
+answer copies matched the canonical answers exactly. For 69 questions, the
+historical annotation copy omitted the image-to-text suffix already present in
+the canonical `query`; the canonical question, including that suffix, is the
+authoritative input. Aspect descriptions, weights, and evidence are preserved.
 
 ## Corpus
 
