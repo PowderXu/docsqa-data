@@ -1,0 +1,166 @@
+{
+  "schema_version": 3,
+  "distribution_version": 1,
+  "name": "docsqa-data",
+  "record_layout": "separate-questions-answers-v1",
+  "partitioning": "none",
+  "questions": 467,
+  "accepted_questions": 467,
+  "answers": 467,
+  "documents": 4860,
+  "qrels": 601,
+  "question_count_by_project": {
+    "github-docs": 197,
+    "prisma": 125,
+    "supabase": 52,
+    "tailwind-css": 93
+  },
+  "model": "gpt-5.6-luna",
+  "normalizer_version": "canonical-local-citations-v14",
+  "rubric_version": "complete-weighted-rubric-v14",
+  "image_text_version": "literal-image-to-text-v1",
+  "image_policy": "pixels are converted once to local text; image vectors are disabled",
+  "reference_answers_in_corpus": false,
+  "files": {
+    "questions.jsonl": {
+      "bytes": 716440,
+      "sha256": "72ca3c11313c0d06d22e41b49a229de379b04d79758f73ba79fc035af4b53fd7"
+    },
+    "answers.jsonl": {
+      "bytes": 7426621,
+      "sha256": "28efa3a03b33def6be0ee7245abe55f682baaff55c85b1f935914c83a8d2dcd0"
+    },
+    "corpus.jsonl": {
+      "bytes": 63727548,
+      "sha256": "d7ade1a007c04fcec5627b1583d31f360ef5f672da466599d5b156c3ea9ff1b4"
+    },
+    "image_text.jsonl": {
+      "bytes": 571404,
+      "sha256": "de580a468ca3698f3a009bbc44ed81a2096579b7af617391d7fa5e1c0fe6bf54"
+    },
+    "aspects.jsonl": {
+      "bytes": 7132139,
+      "sha256": "5d8c87967823f04d27a1f2d884d4adf98c24c25c8510d7e5804a882fa36e66db"
+    }
+  },
+  "downloads": {
+    "questions.jsonl": {
+      "path": "data/questions.jsonl",
+      "compression": "none",
+      "bytes": 716440,
+      "sha256": "72ca3c11313c0d06d22e41b49a229de379b04d79758f73ba79fc035af4b53fd7"
+    },
+    "answers.jsonl": {
+      "path": "data/answers.jsonl",
+      "compression": "none",
+      "bytes": 7426621,
+      "sha256": "28efa3a03b33def6be0ee7245abe55f682baaff55c85b1f935914c83a8d2dcd0"
+    },
+    "corpus.jsonl": {
+      "path": "data/corpus.jsonl.gz",
+      "compression": "gzip",
+      "bytes": 9522198,
+      "sha256": "1bf939d489af71ab54ed3da6ba3718f7f9f8f5543b9ce933fff4b441eb9fd1be"
+    },
+    "image_text.jsonl": {
+      "path": "data/image_text.jsonl",
+      "compression": "none",
+      "bytes": 571404,
+      "sha256": "de580a468ca3698f3a009bbc44ed81a2096579b7af617391d7fa5e1c0fe6bf54"
+    },
+    "aspects.jsonl": {
+      "path": "data/aspects.jsonl",
+      "compression": "none",
+      "bytes": 7132139,
+      "sha256": "5d8c87967823f04d27a1f2d884d4adf98c24c25c8510d7e5804a882fa36e66db"
+    }
+  },
+  "sources": [
+    {
+      "id": "github-docs",
+      "display_name": "GitHub Docs",
+      "description": "GitHub Actions, repositories, security, organizations, APIs, and Copilot.",
+      "repository": "https://github.com/github/docs.git",
+      "revision": "c34e3dccad00f61133c799d20e7d1208a0e6cc92",
+      "checkout_dir": "github-docs",
+      "normalizer": "github",
+      "docs_hosts": [
+        "docs.github.com"
+      ],
+      "image_base_url": "https://docs.github.com",
+      "image_routes": [
+        {
+          "url_prefix": "/assets/",
+          "local_root": "assets"
+        }
+      ],
+      "content_roots": [
+        "content"
+      ],
+      "support_roots": [
+        "data/reusables",
+        "data/variables"
+      ]
+    },
+    {
+      "id": "tailwind-css",
+      "display_name": "Tailwind CSS",
+      "description": "Installation, configuration, utilities, responsive design, and styling.",
+      "repository": "https://github.com/tailwindlabs/tailwindcss.com.git",
+      "revision": "bd868a314bd05ca78acd047e3da289274dd6ccd7",
+      "checkout_dir": "tailwindcss",
+      "normalizer": "tailwind",
+      "docs_hosts": [
+        "tailwindcss.com"
+      ],
+      "image_base_url": "https://tailwindcss.com",
+      "image_routes": [
+        {
+          "url_prefix": "/img/",
+          "local_root": "src/docs/img"
+        }
+      ],
+      "content_roots": [
+        "src/docs"
+      ],
+      "support_roots": []
+    },
+    {
+      "id": "prisma",
+      "display_name": "Prisma",
+      "description": "Prisma ORM, Client, schemas, migrations, databases, Studio, and platform services.",
+      "repository": "https://github.com/prisma/web.git",
+      "revision": "c4ac0e9dd35d46ae34b5e979b2768be5cd0c390c",
+      "checkout_dir": "prisma",
+      "normalizer": "prisma",
+      "docs_hosts": [
+        "www.prisma.io",
+        "prisma.io"
+      ],
+      "image_base_url": "https://www.prisma.io",
+      "image_routes": [],
+      "content_roots": [
+        "apps/docs/content/docs"
+      ],
+      "support_roots": []
+    },
+    {
+      "id": "supabase",
+      "display_name": "Supabase",
+      "description": "Database, authentication, storage, Edge Functions, local development, and APIs.",
+      "repository": "https://github.com/supabase/supabase.git",
+      "revision": "6ea3567948178e81369cd485bc06c5aa40009db3",
+      "checkout_dir": "supabase",
+      "normalizer": "supabase",
+      "docs_hosts": [
+        "supabase.com"
+      ],
+      "image_base_url": "https://supabase.com",
+      "image_routes": [],
+      "content_roots": [
+        "apps/docs/content"
+      ],
+      "support_roots": []
+    }
+  ]
+}
