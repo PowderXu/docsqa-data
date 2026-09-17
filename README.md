@@ -17,9 +17,16 @@ The benchmark implementation is maintained separately in
 | `data/image_text.jsonl` | Existing image-to-text annotations |
 | `data/manifest.json` | File hashes, record counts, compression metadata, and pinned upstream sources |
 | `sources.json` | Documentation repositories and source revisions |
+| `provenance/discussion_sources.jsonl` | 798 frozen public source identifiers and accepted-answer permalinks used during construction |
+| `provenance/candidate_discovery.json` | Source-manifest hash, collection scopes and documented historical selection limits |
 
 Questions and answers match through `question_id`. There are no
 train/validation/test partitions. A line number is not a join key.
+
+This repository owns both the evaluation release and its dataset source
+manifests. The benchmark repository retains code, schemas and a pinned download
+reference; downloaded data and generated documentation there are ignored caches.
+The 798 construction candidates are provenance, not 798 evaluated questions.
 
 | Documentation project | Questions |
 | --- | ---: |
