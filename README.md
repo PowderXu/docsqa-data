@@ -19,6 +19,7 @@ The benchmark implementation is maintained separately in
 | `sources.json` | Documentation repositories and source revisions |
 | `provenance/discussion_sources.jsonl` | 798 frozen public source identifiers and accepted-answer permalinks used during construction |
 | `provenance/candidate_discovery.json` | Source-manifest hash, collection scopes and documented historical selection limits |
+| [`human_review_50/`](human_review_50/README.md) | 50 sampled QA cases, two-item human review forms, and 81 complete evidence pages |
 
 Questions and answers match through `question_id`. There are no
 train/validation/test partitions. A line number is not a join key.
@@ -35,6 +36,26 @@ The 798 construction candidates are provenance, not 798 evaluated questions.
 | Supabase | 52 |
 | Tailwind CSS | 93 |
 | Total | 467 |
+
+## Human review
+
+Open the [50-case review package](human_review_50/README.md) and its
+[reviewer instructions](human_review_50/INSTRUCTIONS.md). Each case asks only:
+
+1. Does the reference answer correctly and completely answer the question?
+2. Do the supplied documents, taken together, contain enough information to
+   answer every essential part of the question?
+
+Labels are **Yes / Partly / No / Cannot judge**, with a brief explanation for
+non-Yes judgments. All review fields are blank. The package preserves the
+sampled question and answer texts and provides full local documentation.
+Multiple-document cases are oversampled; the package records the sampling
+method and weights needed for population estimates.
+
+This review assesses reference answers and document sufficiency. It does not
+validate individual aspect annotations, their weights, or LLM-judge agreement.
+The package is supplementary material; the evaluation release remains defined
+by `data/manifest.json`.
 
 ## Download from the benchmark
 
